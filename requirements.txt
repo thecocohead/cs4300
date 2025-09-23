@@ -1,0 +1,7 @@
+# pip requirements
+pytest
+pytest-cov
+pylint
+
+# for task 7
+numpy
