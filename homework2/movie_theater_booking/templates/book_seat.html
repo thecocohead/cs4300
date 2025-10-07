@@ -1,0 +1,7 @@
+{% extends "base.html" %}
+{% block title %} Seat Bookings {% endblock %}
+{% block content %}
+
+<h1 class="text-center">Seat {{ seat.seat_number }} has been booked for {{ seat.movie.title }}</h1>
+<a href="{% url 'index' %}">Back to Home</a>
+{% endblock %}

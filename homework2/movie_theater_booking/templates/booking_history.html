@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block title %} Booking History {% endblock %}
+{% block content %}
+
+<h1 class="text-center">Booking History</h1>
+<div class="d-flex flex-wrap gap-3">
+    {% for booking in bookings %}
+        <div class="list-group-item flex-fill" style="min-width: 250px; max-width: 300px;">
+            <h5>Booking ID: {{ booking.id }}</h5>
+            <p>Movie: {{ booking.movie.title }}</p>
+            <p>Seat Number: {{ booking.seat.seat_number }}</p>
+            <p>Booking Date: {{ booking.booking_date }}</p>
+        </div>
+    {% endfor %}
+</div>
+{% endblock %}

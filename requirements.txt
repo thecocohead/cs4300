@@ -3,5 +3,9 @@ pytest
 pytest-cov
 pylint
 
-# for task 7
-numpy
+# for HW 1 - task 7
+# numpy
+
+# for HW 2
+django
+djangorestframework

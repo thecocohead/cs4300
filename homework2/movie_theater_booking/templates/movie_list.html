@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block title %} Movies {% endblock %}
+{% block content %}
+
+<h1 class="text-center">Movies</h1>
+<ul>
+    <div class="d-flex flex-wrap gap-3">
+    {% for movie in movies %}
+    <div class="list-group-item flex-fill" style="min-width: 250px; max-width: 300px;">
+    <li class="list-group-item">
+        <h5>{{ movie.title }}</h5>
+        <p>{{ movie.description }}</p>
+        <a href="{% url 'seat_booking_view' movie.id %}" class="btn btn-primary">Book Now</a>
+    </div>
+    {% endfor %}
+    </div>
+</ul>
+{% endblock %}

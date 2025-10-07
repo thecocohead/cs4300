@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block title %} Seat Bookings {% endblock %}
+{% block content %}
+
+<h1 class="title">Seat Bookings</h1>
+<ul>
+    <div class="d-flex flex-wrap gap-3">
+    {% for seat in seats %}
+        <div class="list-group-item flex-fill" style="min-width: 250px; max-width: 300px;">
+            <h5>Seat Number: {{ seat.seat_number }}</h5>
+            <p>Status: {{ seat.booking_status }}</p>
+            {% if seat.booking_status == 'available' %}
+                <form method="post" action="{% url 'book_seat' seat.id %}">
+                    {% csrf_token %}
+                    <button type="submit" class="btn btn-primary">Book Seat</button>
+                </form>
+            {% else %}
+                <p>This seat is already booked.</p>
+            {% endif %}
+        </div>
+    {% endfor %}
+    </div>
+</ul>
+
+{% endblock %}
