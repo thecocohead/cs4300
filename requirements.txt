@@ -9,3 +9,8 @@ pylint
 # for HW 2
 django
 djangorestframework
+psycopg2-binary
+dj-database-url
+whitenoise
+gunicorn 
+uvicorn
